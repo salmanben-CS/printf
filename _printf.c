@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
-
+/**
+ * _printf - prints formatted output to stdout
+ * @format: a pointer to a string containing zero or more format specifiers
+ * @...: optional arguments to be inserted into the format string
+ * Return: the number of characters printed (excluding the null byte used to end
+ */
 int _printf(const char *format, ...)
 {
 int count = 0;
@@ -11,7 +16,7 @@ va_start(args, format);
 
 if (format == NULL)
 {
-return -1;
+return (-1);
 }
 
 for (c = format; *c != '\0'; c++)
@@ -50,12 +55,12 @@ break;
 }
 default:
 write(STDOUT_FILENO, "Error: Invalid format specifier\n", 32);
-return -1;
+return (-1);
 }
 }
 }
 
 va_end(args);
-return count;
+return (count);
 }
 
