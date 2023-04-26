@@ -52,7 +52,7 @@ break;
 }
 case 'b':
 {
-int arg = va_arg(args, int);
+unsigned int arg = va_arg(args, unsigned int);
 bin(arg, &count);
 break;
 }
