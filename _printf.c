@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
+#include "main.h"
 /**
  * _printf - prints formatted output to stdout
  * @format: a pointer to a string containing zero or more format specifiers
@@ -37,10 +38,18 @@ count++;
 break;
 case 'c':
 {
-char arg = va_arg(args, char);
+char arg = va_arg(args, int);
 write(STDOUT_FILENO, &arg, 1);
 count++;
 break;
+}
+case 'd':
+case 'i':
+{
+int arg = va_arg(args, int);
+count += write_int(arg);
+break;
+}
 }
 case 's':
 {
