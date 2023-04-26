@@ -50,7 +50,6 @@ int arg = va_arg(args, int);
 count += write_int(arg);
 break;
 }
-}
 case 's':
 {
 char *str = va_arg(args, char*);
