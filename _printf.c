@@ -37,7 +37,7 @@ count++;
 break;
 case 'c':
 {
-char arg = va_arg(args, int);
+char arg = va_arg(args, char);
 write(STDOUT_FILENO, &arg, 1);
 count++;
 break;
